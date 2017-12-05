@@ -1,0 +1,32 @@
+<!-- ==========================
+      CONTENT
+    =========================== -->
+    <main class="login-2">
+
+      <!-- Title -->
+      <h1 class="login-2__title">Two-factor authentication</h1>
+
+      <!-- Description -->
+      <p class="login-2__desc">Please enter the 6 digit code from your google authentication app</p>
+
+      <!-- Form -->
+      <form class="login-2__form" id="login-2-form" action="<?= $this->url("twofactor") ?>" method="post">
+
+        <!-- Code -->
+        <input class="login-2__input" id="login-2-form-code" name="code" type="text" placeholder="eg. 101256" aria-label="Enter your code">
+
+        <!-- Submit -->
+        <button type="submit" class="login-2__submit">Log in</button>
+
+      </form>
+
+     <?php if(!empty($message)): ?>
+          <!-- Notification -->
+          <div class="notification notification--narrow">
+               <div class="notification__msg notification__msg--error">
+                    <p><?= $message ?></p>
+               </div>
+          </div>
+     <?php endif; ?>
+
+    </main>

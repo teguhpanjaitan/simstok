@@ -1,0 +1,42 @@
+<!-- ==========================
+     CONTENT
+=========================== -->
+<main class="forget-1">
+
+     <!-- Title -->
+     <h1 class="forget-1__title">Reset password</h1>
+
+     <!-- Form -->
+     <form class="forget-1__form" id="forget-form" action="<?= $this->url('forgetpass',['action' => 'reset'])."?token=".$token ?>" method="post">
+
+          <!-- Email -->
+          <input class="forget-1__input" id="forget-password" name="password" type="password" placeholder="Password" aria-label="Enter new password">
+          <input class="forget-1__input" id="forget-password-confirmation" name="confirm_password" type="password" placeholder="Password confirmation" aria-label="Confirm your new password">
+
+          <!-- Captcha -->
+          <div class="sign-up-1__captcha">
+               <div class="g-recaptcha" data-sitekey="6Lfr8DEUAAAAAPgK7K2SxM8nr0fMdbUBaqKivA2z"></div>
+          </div>
+
+          <!-- Submit -->
+          <button class="forget-1__submit">Reset password</button>
+
+          <?php if(!empty($message)): ?>
+          <input type="hidden" name="token" value="<?= $token ?>" />
+          <?php endif; ?>
+     </form>
+
+     <?php if(!empty($message)): ?>
+     <!-- Notification -->
+     <div class="notification notification--narrow">
+          <div class="notification__msg notification__msg--error">
+               <p><?= $message ?></p>
+          </div>
+     </div>
+     <?php endif; ?>
+
+</main>
+
+<?php
+$this->inlineScript()->prependFile("https://www.google.com/recaptcha/api.js")
+?>

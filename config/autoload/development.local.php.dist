@@ -15,7 +15,23 @@
  * You may also create files matching the glob pattern `{,*.}{global,local}-development.php`.
  */
 
+use Doctrine\DBAL\Driver\PDOMySql\Driver as PDOMySqlDriver;
+use Doctrine\ORM\Mapping\Driver\AnnotationDriver;
+
 return [
+    'doctrine' => [
+        'connection' => [
+              'orm_default' => [
+                   'driverClass' => PDOMySqlDriver::class,
+                   'params' => [
+                        'host'     => '127.0.0.1',
+                        'user'     => 'root',
+                        'password' => '',
+                        'dbname'   => 'simstok',
+                   ]
+              ]
+        ],
+    ],
     'view_manager' => [
         'display_exceptions' => true,
     ],

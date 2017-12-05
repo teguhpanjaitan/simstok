@@ -11,5 +11,33 @@
  * credentials from accidentally being committed into version control.
  */
 
+use Doctrine\DBAL\Driver\PDOMySql\Driver as PDOMySqlDriver;
+use Doctrine\ORM\Mapping\Driver\AnnotationDriver;
+
 return [
+     'doctrine' => [
+        'connection' => [
+              'orm_default' => [
+                   'driverClass' => PDOMySqlDriver::class,
+                   'params' => [
+                        'host'     => '127.0.0.1',
+                        'user'     => 'root',
+                        'password' => '',
+                        'dbname'   => 'simstok',
+                   ]
+              ]
+        ],
+        'driver' => [
+            __NAMESPACE__ . '_driver' => [
+                'class' => AnnotationDriver::class,
+                'cache' => 'array',
+                'paths' => [__DIR__ . '/../src/Entity']
+            ],
+            'orm_default' => [
+                'drivers' => [
+                    __NAMESPACE__ . '\Entity' => __NAMESPACE__ . '_driver'
+                ]
+            ],
+        ]
+    ],
 ];
