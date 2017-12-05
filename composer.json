@@ -19,12 +19,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Application\\": "module/Application/src/"
+            "Front\\": "module/Front/src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ApplicationTest\\": "module/Application/test/"
+            "Front\\": "module/Front/test/"
         }
     },
     "extra": [],
