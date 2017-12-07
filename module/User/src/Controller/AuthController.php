@@ -29,19 +29,19 @@ class AuthController extends AbstractActionController
 
           if($this->authManager->is_login()){
                $detail = $this->authManager->getUserLoginDetail();
-               $lv = strtolower($detail->getUserLevel()->getName());
+               $lv = strtolower($detail->getLevel()->getName());
                return $this->redirect()->toRoute($this->authManager->getDefaultPageByLv($lv));
           }
 
           if ($this->getRequest()->isPost()) {
                $data = $this->params()->fromPost();
-               $result = $this->authManager->login($data['email'], $data['password'], false);
+               $result = $this->authManager->login($data['username'], $data['password'], false);
                if ($result->getCode() == Result::SUCCESS) {
                     // Get redirect URL.
                     $redirectUrl = $this->params()->fromPost('redirect', '');
                     if(empty($redirectUrl)) {
                         $detail = $this->authManager->getUserLoginDetail();
-                        $lv = strtolower($detail->getUserLevel()->getName());
+                        $lv = strtolower($detail->getLevel()->getName());
                         return $this->redirect()->toRoute($this->authManager->getDefaultPageByLv($lv));
                     }
                     else {

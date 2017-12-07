@@ -72,13 +72,6 @@ class Module
             // Redirect the user to the "Login" page.
             return $controller->redirect()->toRoute('login', [], ['query'=>['redirect'=>$redirectUrl]]);
         }
-
-        if($authManager->is_login() && $authManager->is_2FAenable() && ($controllerName != AuthController::class && $actionName != "twofactor"))
-        {
-             if(!$authManager->is_2FAAuthenticated()){
-                  return $controller->redirect()->toRoute('twofactor');
-             }
-        }
         
         //check if allow user level access
         if($authManager->is_login())
@@ -97,6 +90,16 @@ class Module
             $viewModel->controllerName = $controllerName;
 
             $controller->layout('layout/layoutAdmin');
+        }
+
+        else if($controllerName == "User\Controller\AuthController")
+        {
+            $application = $event->getApplication();
+            $viewModel = $application->getMvcEvent()->getViewModel();
+            // $moduleName = substr($controllerName, 0, strpos($controllerName, '\\'));
+            $viewModel->controllerName = $controllerName;
+
+            $controller->layout('layout/layoutLogin');
         }
     }
 }

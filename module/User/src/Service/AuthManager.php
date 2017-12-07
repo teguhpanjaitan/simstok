@@ -39,8 +39,8 @@ class AuthManager
 
      public function getUserLoginDetail(){
           $authAdapter = $this->authService->getAdapter();
-          $email = $this->authService->getIdentity();
-          $authAdapter->setEmail($email);
+          $username = $this->authService->getIdentity();
+          $authAdapter->setUsername($username);
           return $authAdapter->getUserDetail();
      }
 
@@ -62,7 +62,7 @@ class AuthManager
                return false;
      }
 
-     public function login($email, $password, $rememberMe)
+     public function login($username, $password, $rememberMe)
      {
           // Check if user has already logged in. If so, do not allow to log in
           // twice.
@@ -72,15 +72,9 @@ class AuthManager
 
           // Authenticate with login/password.
           $authAdapter = $this->authService->getAdapter();
-          $authAdapter->setEmail($email);
+          $authAdapter->setUsername($username);
           $authAdapter->setPassword($password);
-          $authAdapter->setTwoFactor(true);
           $result = $this->authService->authenticate();
-
-          if ($result->getCode() == Result::SUCCESS) {
-               $userE = $this->getUserLoginDetail();
-               $this->authRepo->recordLogin($userE);
-          }
 
           if ($result->getCode() == Result::SUCCESS && $rememberMe) {
                // Session cookie will expire in 1 month (30 days).
@@ -99,10 +93,6 @@ class AuthManager
           if ($this->authService->getIdentity() == null) {
                // throw new \Exception('The user is not logged in');
                return false;
-          }
-
-          if($this->is_2FAenable()){
-               $this->logoutTwoFactor();
           }
 
           // Remove identity from session.
@@ -214,7 +204,7 @@ class AuthManager
           }
 
           $userE = $this->getUserLoginDetail();
-          $lv = strtolower($userE->getUserLevel()->getName());
+          $lv = strtolower($userE->getLevel()->getName());
           if($lv == "admin"){
                return true;
           }

@@ -51,5 +51,8 @@ return [
         //             ['actions' => ['index'], 'allow' => '*'],
         //         ],
         // ]
+        'default_page' => [
+            'admin' => 'home'
+        ]
     ]
 ];
