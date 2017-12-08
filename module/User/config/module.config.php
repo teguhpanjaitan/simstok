@@ -38,10 +38,6 @@ return [
             Service\AuthAdapter::class => Service\Factory\AuthAdapterFactory::class,
             Service\AuthManager::class => Service\Factory\AuthManagerFactory::class,
             Service\CurrentUser::class => Service\Factory\CurrentUserFactory::class,
-            Repository\ForgetPassRepo::class => Repository\Factory\ForgetPassRepoFactory::class,
-            Repository\CurrentUserRepository::class => Repository\Factory\CurrentUserRepositoryFactory::class,
-            Repository\AuthRepo::class => Repository\Factory\AuthRepoFactory::class,
-            \Services\Transport\Gmail::class => \Services\Transport\Factory\GmailFactory::class,
         ],
     ],
     'view_manager' => [

@@ -4,7 +4,7 @@ namespace User\Service;
 use Zend\Authentication\Adapter\AdapterInterface;
 use Zend\Authentication\Result;
 use Zend\Crypt\Password\Bcrypt;
-use Front\Entity\Users;
+use DefaultMod\Entity\Users;
 
 
 class AuthAdapter implements AdapterInterface
@@ -49,11 +49,6 @@ class AuthAdapter implements AdapterInterface
     public function setPassword($password)
     {
         $this->password = (string)$password;
-    }
-
-    public function setTwoFactor($twoFactor)
-    {
-        $this->twoFactor = $twoFactor;
     }
 
     public function getUserDetail(){

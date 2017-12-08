@@ -6,8 +6,6 @@ use Zend\ServiceManager\Factory\FactoryInterface;
 use Zend\Authentication\AuthenticationService;
 use Zend\Session\SessionManager;
 use User\Service\AuthManager;
-use User\Repository\AuthRepo;
-//use User\Service\UserManager;
 
 /**
  * This is the factory class for AuthManager service. The purpose of the factory
@@ -23,7 +21,6 @@ class AuthManagerFactory implements FactoryInterface
           // Instantiate dependencies.
           $authenticationService = $container->get(AuthenticationService::class);
           $sessionManager = $container->get(SessionManager::class);
-          $authRepo = $container->get(AuthRepo::class);
 
           // Get contents of 'access_filter' config key (the AuthManager service
           // will use this data to determine whether to allow currently logged in user
@@ -37,6 +34,6 @@ class AuthManagerFactory implements FactoryInterface
           }
 
         // Instantiate the AuthManager service and inject dependencies to its constructor.
-        return new AuthManager($authenticationService, $sessionManager, $config, $authRepo);
+        return new AuthManager($authenticationService, $sessionManager, $config);
     }
 }

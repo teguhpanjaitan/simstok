@@ -16,13 +16,11 @@ class CurrentUser
      * @var Zend\Session\SessionManager
      */
      private $sessionManager;
-     private $currentUserRepo;
 
-     public function __construct($authService, $sessionManager, $currentUserRepo)
+     public function __construct($authService, $sessionManager)
      {
           $this->authService = $authService;
           $this->sessionManager = $sessionManager;
-          $this->currentUserRepo = $currentUserRepo;
      }
 
      public function is_login(){
@@ -35,8 +33,8 @@ class CurrentUser
 
      public function getUserLoginDetail(){
           $authAdapter = $this->authService->getAdapter();
-          $email = $this->authService->getIdentity();
-          $authAdapter->setEmail($email);
+          $username = $this->authService->getIdentity();
+          $authAdapter->setUsername($username);
           return $authAdapter->getUserDetail();
      }
 
@@ -59,7 +57,12 @@ class CurrentUser
           return $blockCipher->encrypt($detail->getId());
      }
 
-     public function getUsername(){
+     public function getName(){
+          $detail = $this->getUserLoginDetail();
+          return $detail->getName();
+	}
+	
+	public function getUsername(){
           $detail = $this->getUserLoginDetail();
           return $detail->getUsername();
      }
@@ -67,9 +70,5 @@ class CurrentUser
      public function getEmail(){
           $detail = $this->getUserLoginDetail();
           return $detail->getEmail();
-     }
-
-     public function getLastLogin(){
-          return $this->currentUserRepo->getLastLogin();
      }
 }

@@ -2,7 +2,6 @@
 namespace User\Service;
 
 use Zend\Authentication\Result;
-use PragmaRX\Google2FA\Google2FA;
 
 class AuthManager
 {
@@ -24,17 +23,14 @@ class AuthManager
      */
      private $config;
 
-     private $authRepo;
-
      /**
      * Constructs the service.
      */
-     public function __construct($authService, $sessionManager, $config, $authRepo)
+     public function __construct($authService, $sessionManager, $config)
      {
           $this->authService = $authService;
           $this->sessionManager = $sessionManager;
           $this->config = $config;
-          $this->authRepo = $authRepo;
      }
 
      public function getUserLoginDetail(){
@@ -143,58 +139,6 @@ class AuthManager
           }
 
           return "all";
-     }
-
-     public function is_2FAenable()
-     {
-          $userE = $this->getUserLoginDetail();
-          $data = $this->authRepo->is_2FAenable($userE);
-          if(count($data) == 0)
-          {
-               return false;
-          }
-          else{
-               return true;
-          }
-     }
-
-     public function is_2FAAuthenticated()
-     {
-          $userE = $this->getUserLoginDetail();
-          $data = $this->authRepo->is_2FAAuthenticated($userE);
-          if(count($data) == 0)
-          {
-               return false;
-          }
-          else{
-               return true;
-          }
-     }
-
-     public function getSecret()
-     {
-          $uid = $this->getUserLoginDetail()->getId();
-          $data = $this->authRepo->getSettingValue($uid,"2FASecret");
-          return $data[0]->getMetaValue();
-     }
-
-     public function verify($secret,$code)
-     {
-          $google2fa = new Google2FA();
-          $valid = $google2fa->verifyKey($secret, $code);
-          return $valid;
-     }
-
-     public function loginTwoFactor()
-     {
-          $userE = $this->getUserLoginDetail();
-          $this->authRepo->loginTwoFactor($userE);
-     }
-
-     public function logoutTwoFactor()
-     {
-          $userE = $this->getUserLoginDetail();
-          $this->authRepo->logoutTwoFactor($userE);
      }
 
      public function is_admin(){

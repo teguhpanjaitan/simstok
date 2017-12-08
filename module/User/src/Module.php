@@ -94,12 +94,11 @@ class Module
 
         if($controllerName == "User\Controller\AuthController")
         {
-            $application = $event->getApplication();
-            $viewModel = $application->getMvcEvent()->getViewModel();
-            // $moduleName = substr($controllerName, 0, strpos($controllerName, '\\'));
-            $viewModel->controllerName = $controllerName;
-
             $controller->layout('layout/layoutLogin');
         }
+
+        $application = $event->getApplication();
+        $viewModel = $application->getMvcEvent()->getViewModel();
+        $viewModel->controllerName = $controllerName;
     }
 }

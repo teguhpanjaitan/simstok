@@ -32,6 +32,13 @@ class Users implements EntityInterface
     /**
      * @var string
      *
+     * @ORM\Column(name="name", type="text", length=65535, nullable=true)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="password", type="text", length=65535, nullable=true)
      */
     private $password;
@@ -124,6 +131,30 @@ class Users implements EntityInterface
     public function getUsername()
     {
         return $this->username;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Users
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
     }
 
     /**

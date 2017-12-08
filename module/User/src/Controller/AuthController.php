@@ -9,13 +9,11 @@ use Zend\Uri\Uri;
 
 class AuthController extends AbstractActionController
 {
-    private $entityManager;
     private $authManager;
     private $authService;
 
-    public function __construct($entityManager, $authManager, $authService)
+    public function __construct($authManager, $authService)
     {
-        $this->entityManager = $entityManager;
         $this->authManager = $authManager;
         $this->authService = $authService;
     }
@@ -24,9 +22,8 @@ class AuthController extends AbstractActionController
     {
           $data = array();
           $data['redirect'] = $this->params()->fromQuery('redirect', '');
-          $loginErr = false;
-          $messageErr = '';
-
+          $message = '';
+            
           if($this->authManager->is_login()){
                $detail = $this->authManager->getUserLoginDetail();
                $lv = strtolower($detail->getLevel()->getName());
@@ -60,17 +57,14 @@ class AuthController extends AbstractActionController
                    }
                }
                else{
-                    $messageErr = $result->getMessages();
-                    $loginErr = true;
+                    $message = $result->getMessages();
                }
           }
 
           return new ViewModel([
                'data' => $data,
-               'loginErr' => $loginErr,
-               'messageErr' => $messageErr
+               'message' => $message
           ]);
-          // return new ViewModel();
     }
 
     public function logoutAction()

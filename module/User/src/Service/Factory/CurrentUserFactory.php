@@ -6,7 +6,6 @@ use Zend\ServiceManager\Factory\FactoryInterface;
 use Zend\Authentication\AuthenticationService;
 use Zend\Session\SessionManager;
 use User\Service\CurrentUser;
-use User\Repository\CurrentUserRepository;
 
 /**
  * This is the factory class for AuthManager service. The purpose of the factory
@@ -22,9 +21,8 @@ class CurrentUserFactory implements FactoryInterface
         // Instantiate dependencies.
         $authenticationService = $container->get(AuthenticationService::class);
         $sessionManager = $container->get(SessionManager::class);
-        $userRepo = $container->get(CurrentUserRepository::class);
 
         // Instantiate the AuthManager service and inject dependencies to its constructor.
-        return new CurrentUser($authenticationService, $sessionManager, $userRepo);
+        return new CurrentUser($authenticationService, $sessionManager);
     }
 }
