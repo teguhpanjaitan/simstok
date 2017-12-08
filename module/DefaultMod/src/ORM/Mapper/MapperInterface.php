@@ -1,9 +1,9 @@
 <?php
 
-namespace Front\ORM\Mapper;
+namespace DefaultMod\ORM\Mapper;
 
 use Doctrine\ORM\EntityManagerInterface;
-use Front\ORM\Entity\EntityInterface;
+use DefaultMod\ORM\Entity\EntityInterface;
 
 /**
  * Interface of Entity

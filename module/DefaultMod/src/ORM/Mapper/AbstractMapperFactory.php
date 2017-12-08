@@ -1,5 +1,5 @@
 <?php
-namespace Front\ORM\Mapper;
+namespace DefaultMod\ORM\Mapper;
 
 use Interop\Container\ContainerInterface;
 use Zend\ServiceManager\AbstractFactoryInterface;
@@ -13,7 +13,7 @@ class AbstractMapperFactory implements AbstractFactoryInterface
 {
     protected $mappers = [];
 
-    protected $mapperPrefix = 'Front\\ORM\\Mapper\\';
+    protected $mapperPrefix = 'DefaultMod\\ORM\\Mapper\\';
 
     public function canCreate(ContainerInterface $container, $requestedName)
     {

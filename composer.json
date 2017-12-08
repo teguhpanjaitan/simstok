@@ -24,13 +24,13 @@
     "autoload": {
         "psr-4": {
             "User\\": "module/User/src/",
-            "Front\\": "module/Front/src/"
+            "DefaultMod\\": "module/DefaultMod/src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
             "User\\": "module/User/test/",
-            "Front\\": "module/Front/test/"
+            "DefaultMod\\": "module/DefaultMod/test/"
         }
     },
     "extra": [],

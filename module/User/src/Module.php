@@ -82,17 +82,17 @@ class Module
             }
         }
 
-        if($authManager->is_admin())
-        {
-            $application = $event->getApplication();
-            $viewModel = $application->getMvcEvent()->getViewModel();
-            // $moduleName = substr($controllerName, 0, strpos($controllerName, '\\'));
-            $viewModel->controllerName = $controllerName;
+        // if($authManager->is_admin())
+        // {
+        //     $application = $event->getApplication();
+        //     $viewModel = $application->getMvcEvent()->getViewModel();
+        //     // $moduleName = substr($controllerName, 0, strpos($controllerName, '\\'));
+        //     $viewModel->controllerName = $controllerName;
 
-            $controller->layout('layout/layoutAdmin');
-        }
+        //     $controller->layout('layout/layoutAdmin');
+        // }
 
-        else if($controllerName == "User\Controller\AuthController")
+        if($controllerName == "User\Controller\AuthController")
         {
             $application = $event->getApplication();
             $viewModel = $application->getMvcEvent()->getViewModel();

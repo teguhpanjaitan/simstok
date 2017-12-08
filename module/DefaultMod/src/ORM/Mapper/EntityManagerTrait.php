@@ -1,6 +1,6 @@
 <?php
 
-namespace Front\ORM\Mapper;
+namespace DefaultMod\ORM\Mapper;
 
 use Doctrine\ORM\EntityManagerInterface;
 

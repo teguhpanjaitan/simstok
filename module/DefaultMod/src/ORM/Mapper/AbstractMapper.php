@@ -1,8 +1,8 @@
 <?php
 
-namespace Front\ORM\Mapper;
+namespace DefaultMod\ORM\Mapper;
 
-use Front\ORM\Entity\EntityInterface;
+use DefaultMod\ORM\Entity\EntityInterface;
 use Doctrine\ORM\Tools\Pagination\Paginator as DoctrinePaginator;
 use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as DoctrinePaginatorAdapter;
 

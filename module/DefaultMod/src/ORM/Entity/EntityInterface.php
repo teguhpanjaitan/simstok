@@ -1,6 +1,6 @@
 <?php
 
-namespace Front\ORM\Entity;
+namespace DefaultMod\ORM\Entity;
 
 /**
  * Interface of Entity
