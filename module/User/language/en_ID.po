@@ -1,0 +1,27 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Loco Demo\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-12-08 03:51+0000\n"
+"PO-Revision-Date: 2017-12-08 11:02+0700\n"
+"Language-Team: English\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Loco-Source-Locale: en_ID\n"
+"X-Generator: Poedit 2.0.5\n"
+"Last-Translator: \n"
+"Language: en_ID\n"
+
+msgid "Invalid credentials"
+msgstr "Login tidak benar"
+
+msgid "User still not active"
+msgstr "User belum aktif"
+
+msgid "User deactivated"
+msgstr "User di-nonaktifkan"
+
+msgid "User banned"
+msgstr "User di-banned"

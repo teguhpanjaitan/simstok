@@ -27,6 +27,9 @@ class AuthAdapter implements AdapterInterface
      */
     private $entityManager;
 
+    private $traslationConfig;
+    private $translator;
+
     /**
      * Constructor.
      */
@@ -68,7 +71,7 @@ class AuthAdapter implements AdapterInterface
             return new Result(
                 Result::FAILURE_IDENTITY_NOT_FOUND,
                 null,
-                ['Invalid credentials.']);
+                ['Invalid credentials']);
         }
 
         // If the user with such username exists, we need to check if it is active or retired.
@@ -77,19 +80,19 @@ class AuthAdapter implements AdapterInterface
             return new Result(
                 Result::FAILURE,
                 null,
-                ['User still not active.']);
+                ['User still not active']);
         }
         else if ($user->getStatus()->getName() == "deactivated") {
             return new Result(
                 Result::FAILURE,
                 null,
-                ['User deactivated.']);
+                ['User deactivated']);
         }
         else if ($user->getStatus()->getName() == "banned") {
             return new Result(
                 Result::FAILURE,
                 null,
-                ['User banned.']);
+                ['User banned']);
         }
 
         // Now we need to calculate hash based on user-entered password and compare
@@ -104,13 +107,13 @@ class AuthAdapter implements AdapterInterface
             return new Result(
                     Result::SUCCESS,
                     $this->username,
-                    ['Authenticated successfully.']);
+                    ['Authenticated successfully']);
         }
 
         // If password check didn't pass return 'Invalid Credential' failure status.
         return new Result(
                 Result::FAILURE_CREDENTIAL_INVALID,
                 null,
-                ['Invalid credentials.']);
+                ['Invalid credentials']);
     }
 }
