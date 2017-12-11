@@ -25,4 +25,5 @@ return [
     'DoctrineORMModule',
     'User',
     'DefaultMod',
+    'MasterData',
 ];

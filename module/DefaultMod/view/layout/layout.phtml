@@ -116,21 +116,21 @@ $currentUser = $layoutViewModel->currentUser;
                     <ul class="nav in side-menu">
                         
                         <li class="<?= (substr($controllerName, 0, strpos($controllerName, '\\')) == "DefaultMod")?"active":"" ?>">
-                            <a href="#" class="ripple">
+                            <a href="<?= $this->url("home") ?>" class="ripple">
                                 <i class="list-icon material-icons">home</i>
-                                <span class="hide-menu">Depan</span>
+                                <span class="hide-menu"><?= $this->translate("Dashboard") ?></span>
                             </a>
                         </li>
 
-                        <li class="menu-item-has-children">
+                        <li class="menu-item-has-children <?= (substr($controllerName, 0, strpos($controllerName, '\\')) == "MasterData")?"active":"" ?>">
                             <a href="javascript:void(0);" class="ripple">
                                 <i class="list-icon material-icons">data_usage</i>
-                                <span class="hide-menu">Data Master</span>
+                                <span class="hide-menu"><?= $this->translate("Master Data") ?></span>
                             </a>
                             <ul class="list-unstyled sub-menu">
-                                <li><a href="#">Unit</a></li>
-                                <li><a href="#">Item</a></li>
-                                <li><a href="#">Packages</a></li>
+                                <li class="<?= ($controllerName == "MasterData\Controller\IndexController")?"active":"" ?>"><a href="<?= $this->url("masterunit") ?>"><?= $this->translate("Master Unit") ?></a></li>
+                                <li class="<?= ($controllerName == "MasterData\Controller\ItemController")?"active":"" ?>"><a href="<?= $this->url("masteritem") ?>"><?= $this->translate("Master Item") ?></a></li>
+                                <li class="<?= ($controllerName == "MasterData\Controller\PackageController")?"active":"" ?>"><a href="<?= $this->url("masterpackage") ?>"><?= $this->translate("Master Package") ?></a></li>
                             </ul>
                         </li>
                                 

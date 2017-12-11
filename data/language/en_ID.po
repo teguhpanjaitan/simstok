@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Loco Demo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-08 03:51+0000\n"
-"PO-Revision-Date: 2017-12-08 11:02+0700\n"
+"PO-Revision-Date: 2017-12-11 12:27+0700\n"
 "Language-Team: English\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
@@ -14,6 +14,7 @@ msgstr ""
 "Last-Translator: \n"
 "Language: en_ID\n"
 
+# login related page
 msgid "Invalid credentials"
 msgstr "Login tidak benar"
 
@@ -25,3 +26,19 @@ msgstr "User di-nonaktifkan"
 
 msgid "User banned"
 msgstr "User di-banned"
+
+# menu related
+msgid "Dashboard"
+msgstr "Depan"
+
+msgid "Master Data"
+msgstr "Data Utama"
+
+msgid "Master Unit"
+msgstr "Satuan"
+
+msgid "Master Item"
+msgstr "Barang"
+
+msgid "Master Package"
+msgstr "Paket"

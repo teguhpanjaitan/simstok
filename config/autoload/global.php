@@ -54,5 +54,18 @@ return [
         'default_page' => [
             'admin' => 'home'
         ]
-    ]
+    ],
+
+    //will be use to translate all the current system
+    //default will be from english to indonesian
+    'translator' => [
+        'locale' => 'en_ID',
+        'translation_file_patterns' => [
+            [
+                'type'     => 'gettext',
+                'base_dir' => getcwd() .  '/data/language',
+                'pattern'  => '%s.mo',
+            ],
+        ],
+    ],
 ];

@@ -100,5 +100,6 @@ class Module
         $application = $event->getApplication();
         $viewModel = $application->getMvcEvent()->getViewModel();
         $viewModel->controllerName = $controllerName;
+        $viewModel->actionName = $actionName;
     }
 }

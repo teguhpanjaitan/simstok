@@ -25,13 +25,15 @@
     "autoload": {
         "psr-4": {
             "User\\": "module/User/src/",
-            "DefaultMod\\": "module/DefaultMod/src/"
+            "DefaultMod\\": "module/DefaultMod/src/",
+            "MasterData\\": "module/MasterData/src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
             "User\\": "module/User/test/",
-            "DefaultMod\\": "module/DefaultMod/test/"
+            "DefaultMod\\": "module/DefaultMod/test/",
+            "MasterData\\": "module/MasterData/test/"
         }
     },
     "extra": [],
