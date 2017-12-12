@@ -14,20 +14,12 @@ msgstr ""
 "Last-Translator: \n"
 "Language: en_ID\n"
 
-# login related page
-msgid "Invalid credentials"
-msgstr "Login tidak benar"
+#general use
+msgid "Add New"
+msgstr "Tambah Baru"
 
-msgid "User still not active"
-msgstr "User belum aktif"
-
-msgid "User deactivated"
-msgstr "User di-nonaktifkan"
-
-msgid "User banned"
-msgstr "User di-banned"
-
-# menu related
+# @module MasterData
+# menu
 msgid "Dashboard"
 msgstr "Depan"
 
@@ -43,7 +35,7 @@ msgstr "Barang"
 msgid "Master Package"
 msgstr "Paket"
 
-# master table
+# table
 msgid "Name"
 msgstr "Nama"
 
@@ -71,5 +63,32 @@ msgstr "Data Barang"
 msgid "Master Package Data"
 msgstr "Data Paket Barang"
 
-msgid "Add New"
-msgstr "Tambah Baru"
+# @module user
+# login service
+msgid "Invalid credentials"
+msgstr "Login tidak benar"
+
+msgid "User still not active"
+msgstr "User belum aktif"
+
+msgid "User deactivated"
+msgstr "User di-nonaktifkan"
+
+msgid "User banned"
+msgstr "User di-banned"
+
+# menu
+msgid "Manage User"
+msgstr "Manajemen Pengguna"
+
+msgid "Users"
+msgstr "Pengguna"
+
+msgid "Username"
+msgstr "Nama Pengguna"
+
+msgid "Level"
+msgstr "Hak Akses"
+
+msgid "Status"
+msgstr "Status"

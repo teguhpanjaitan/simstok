@@ -123,6 +123,13 @@ $currentUser = $layoutViewModel->currentUser;
                             </a>
                         </li>
 
+                        <li class="<?= (substr($controllerName, 0, strpos($controllerName, '\\')) == "User")?"active":"" ?>">
+                            <a href="<?= $this->url("users") ?>" class="ripple">
+                                <i class="list-icon material-icons">accessibility</i>
+                                <span class="hide-menu"><?= $this->translate("Manage User") ?></span>
+                            </a>
+                        </li>
+
                         <li class="menu-item-has-children <?= (substr($controllerName, 0, strpos($controllerName, '\\')) == "MasterData")?"active":"" ?>">
                             <a href="javascript:void(0);" class="ripple">
                                 <i class="list-icon material-icons">data_usage</i>
