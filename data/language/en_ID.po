@@ -42,3 +42,34 @@ msgstr "Barang"
 
 msgid "Master Package"
 msgstr "Paket"
+
+# master table
+msgid "Name"
+msgstr "Nama"
+
+msgid "Action"
+msgstr "Aksi"
+
+msgid "Unit"
+msgstr "Satuan"
+
+msgid "Registration Number"
+msgstr "Nomor Registrasi"
+
+msgid "Item"
+msgstr "Barang"
+
+msgid "Number of Item"
+msgstr "Jumlah Barang"
+
+msgid "Master Unit Data"
+msgstr "Data Satuan"
+
+msgid "Master Item Data"
+msgstr "Data Barang"
+
+msgid "Master Package Data"
+msgstr "Data Paket Barang"
+
+msgid "Add New"
+msgstr "Tambah Baru"

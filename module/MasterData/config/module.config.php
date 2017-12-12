@@ -43,9 +43,14 @@ return [
     ],
     'controllers' => [
         'factories' => [
-            Controller\IndexController::class => InvokableFactory::class,
-            Controller\ItemController::class => InvokableFactory::class,
-            Controller\PackageController::class => InvokableFactory::class,
+            Controller\IndexController::class => Controller\Factory\IndexControllerFactory::class,
+            Controller\ItemController::class => Controller\Factory\ItemControllerFactory::class,
+            Controller\PackageController::class => Controller\Factory\PackageControllerFactory::class,
+        ],
+    ],
+    'service_manager' => [
+        'factories' => [
+            0 => Mapper\AbstractMapperFactory::class,
         ],
     ],
     'view_manager' => [
